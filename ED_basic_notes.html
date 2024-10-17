@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-10-16 Wed 20:01 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ED BASIC NOTES</title>
+<meta name="author" content="LT Mitchell Irmer" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<style type="text/css">
+ pre.src {background-color: #eff1f5; color: #4c4f69;}</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">ED BASIC NOTES</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org69e2d03">Exam 3</a>
+<ul>
+<li><a href="#org65174d2">3.3.4 (TLO 1,3,6,7)</a></li>
+<li><a href="#orgaa59d79">3.5.5 (TLO 1,2,4,5,7,9,12)</a></li>
+<li><a href="#org7a3f90c">3.6.1 (TLO 3,5b,8,13)</a></li>
+<li><a href="#org81afcda">3.6.2 (TLO 1,2,4,6)</a></li>
+<li><a href="#org93f52e0">4.2.1 (TLO 2,7,8,9)</a></li>
+<li><a href="#orge87e407">4.2.2 (TLO 1,3,4,5)</a></li>
+<li><a href="#org0f7b389">5.1.4 (TLO 1,2)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org69e2d03" class="outline-2">
+<h2 id="org69e2d03">Exam 3</h2>
+<div class="outline-text-2" id="text-org69e2d03">
+</div>
+<div id="outline-container-org65174d2" class="outline-3">
+<h3 id="org65174d2">3.3.4 (TLO 1,3,6,7)</h3>
+<div class="outline-text-3" id="text-org65174d2">
+</div>
+<div id="outline-container-org2f3bcec" class="outline-4">
+<h4 id="org2f3bcec">TLOs</h4>
+<div class="outline-text-4" id="text-org2f3bcec">
+</div>
+<ul class="org-ul">
+<li><a id="orgf24d3df"></a><b>1. Recognize the U.S. technology posture in relation to defense acquisition.</b><br /></li>
+<li><a id="org4456354"></a>2. Explain the role of science and technology in defense acquisition.<br /></li>
+<li><a id="org686b741"></a><b>3. Recognize the continuum of science and technology development from the university environment to advanced technologies and key traits of maturity levels.</b><br /></li>
+<li><a id="org270101d"></a>4. Given descriptions of the activities and end products in Research and Development (R&amp;D) programs, identify the appropriate R&amp;D categories.<br /></li>
+<li><a id="orgf5a00f6"></a>5. Recognize the most likely phases in the life cycle to introduce new technologies.<br /></li>
+<li><a id="org701f7fc"></a><b>6. Recognize the characteristics to include objectives, benefits and drawbacks,outcomes, regulation and oversight of Advanced Technology Demonstrations (ATD) and Joint Concept Technology Demonstrations (JCTD) as technology transition mechanisms.</b><br /></li>
+<li><a id="org499fceb"></a><b>7. Recall the purpose, roles, and acquisition program support provided by the Federally Funded Research Centers (FFRDC) and University Affiliated Research Centers (UARC).</b><br /></li>
+<li><a id="orgdc1c229"></a>8. Given market research and company data, assess technology maturity to determine technology readiness levels.<br /></li>
+</ul>
+</div>
+<div id="outline-container-orga32f96d" class="outline-4">
+<h4 id="orga32f96d">LECTURE NOTES</h4>
+<div class="outline-text-4" id="text-orga32f96d">
+</div>
+<ul class="org-ul">
+<li><a id="orge6899d5"></a>Federal gov increasingly dependent on industry investments and commercial tech<br /></li>
+<li><a id="org5f86412"></a>Federally Funded Research and Development Centers (FFRDC)<br />
+<div class="outline-text-5" id="text-org5f86412">
+<ul class="org-ul">
+<li>Drive innovation and problem solving by assisting the Government in conducting research, technology development, systems acquisition and policy guidance</li>
+</ul>
+</div>
+</li>
+<li><a id="org8127ccc"></a>University Affiliated Research Centers<br />
+<div class="outline-text-5" id="text-org8127ccc">
+<ul class="org-ul">
+<li>special type of FFRDC</li>
+<li>SCAR, GIT, MIT, JHAPL, PSU</li>
+</ul>
+</div>
+</li>
+<li><a id="orgd21ad12"></a>TRLs<br />
+<div class="outline-text-5" id="text-orgd21ad12">
+<ul class="org-ul">
+<li>1. Basic principles observed and reported</li>
+<li>2. Technology concept and/ or application formulated</li>
+<li>3. Analytical and experimental critical function and/or characteristic proof of concept</li>
+<li>4. Component and/or breadboard validation in laboratory environment</li>
+<li>5. Component and/or breadboard validation in relevant environment</li>
+<li>6. System/subsystem model demonstration in relevant environment</li>
+<li>7.System prototype demonstration in relevant environment</li>
+<li>8. Actual system completed and qualified through test and demonstration</li>
+<li>9. Integration is mission proven through successful mission operations</li>
+</ul>
+</div>
+</li>
+<li><a id="orge5cefc7"></a>Joint Capability Tech Demo (JCTD)<br />
+<div class="outline-text-5" id="text-orge5cefc7">
+<ul class="org-ul">
+<li>evaluate military utility</li>
+<li>develop CONOPS and doctrine</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-orgd8e16b4" class="outline-4">
+<h4 id="orgd8e16b4">SUMMARY</h4>
+<div class="outline-text-4" id="text-orgd8e16b4">
+</div>
+<ul class="org-ul">
+<li><a id="org0ddc0a3"></a>What is the U.S. technology posture in relation to defense acquisition?<br />
+<div class="outline-text-5" id="text-org0ddc0a3">
+<p>
+– Rely heavily on industry research and commercial technologies
+</p>
+</div>
+</li>
+<li><a id="orge2039dd"></a>What is the role of S&amp;T in defense acquisitions?<br />
+<div class="outline-text-5" id="text-orge2039dd">
+<p>
+– Perform basic and applied research to address battlefield deficiencies and mature
+technologies to reduce risk for system integration
+</p>
+</div>
+</li>
+<li><a id="orgbda75d1"></a>When during the acquisition life‐cycle are we most likely to introduce new technologies?<br />
+<div class="outline-text-5" id="text-orgbda75d1">
+<p>
+– Prior to M/S B
+</p>
+</div>
+</li>
+<li><a id="org9445628"></a>Key characteristics of ATD?<br />
+<div class="outline-text-5" id="text-org9445628">
+<p>
+– Assess feasibility and maturity of technology, risk reducer
+</p>
+</div>
+</li>
+<li><a id="orga347377"></a>Key characteristics of JCTD?<br />
+<div class="outline-text-5" id="text-orga347377">
+<p>
+– Evaluate military utility, develop CONOPS &amp; doctrine, Go to War capability
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaa59d79" class="outline-3">
+<h3 id="orgaa59d79">3.5.5 (TLO 1,2,4,5,7,9,12)</h3>
+<div class="outline-text-3" id="text-orgaa59d79">
+</div>
+<div id="outline-container-org6a837ed" class="outline-4">
+<h4 id="org6a837ed">TLOs</h4>
+<div class="outline-text-4" id="text-org6a837ed">
+</div>
+<ul class="org-ul">
+<li><a id="orgd9e21ce"></a>1. Recognize the fundamentals of Test and Evaluation (T&amp;E).<br /></li>
+<li><a id="org7354dcd"></a>2. Identify how T&amp;E supports risk management by milestone decision authorities.<br /></li>
+<li><a id="org892a69b"></a>3. Recognize how T&amp;E supports the Systems Engineering Process.<br /></li>
+<li><a id="org0419d41"></a>4. Identify the characteristics and purposes of the different types of T&amp;E and the organizations responsible for each.<br /></li>
+<li><a id="org7a382cc"></a>5. Identify the key T&amp;E support organizations within DoD.<br /></li>
+<li><a id="orga90e49e"></a>6. Identify the role of modeling and simulation as a tool in the systems engineering process.<br /></li>
+<li><a id="org81299d8"></a>7. Recognize the importance of modeling and simulation in the defense acquisition process.<br /></li>
+<li><a id="orgbcc881a"></a>8. Identify the regulation that dictates the development of a Test and Evaluation Master Plan (TEMP) and recognize why there is a need to develop a TEMP for most programs.<br /></li>
+<li><a id="orgc509ca7"></a>9. Recognize how the TEMP generation, staffing and approval process integrates all functional disciplines throughout the acquisition life‐cycle.<br /></li>
+<li><a id="orgd17b90c"></a>10. Identify issues affecting T&amp;E resource requirements, test planning, and test execution activities in support of a program's acquisition strategy.<br /></li>
+<li><a id="orgb96da77"></a>11. Identify the requirements for interoperability testing.<br /></li>
+<li><a id="org60d5b9a"></a>12. Identify the key Operational Test &amp; Evaluation (OT&amp;E) activities that must be coordinated with the Director Operational Test &amp; Evaluation (DOT&amp;E) staff and the Operational Test Agencies.<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgeceac42" class="outline-4">
+<h4 id="orgeceac42">LECTURE NOTES</h4>
+<div class="outline-text-4" id="text-orgeceac42">
+</div>
+<ul class="org-ul">
+<li><a id="orgdff13d0"></a>Purpose of Test and Eval is to acquire systems that work<br /></li>
+<li><a id="org75262f3"></a>Test &#x2013;&gt; raw data<br /></li>
+<li><a id="orgd6cf869"></a>Evaluation &#x2013;&gt; analyzed info, draws conclusions<br />
+<div class="outline-text-5" id="text-orgd6cf869">
+<ul class="org-ul">
+<li>the review, analysis, and assessment data obtained from the testing</li>
+</ul>
+</div>
+</li>
+<li><a id="orgeee8e47"></a>Beyond LRIP Report (BLRIP) required prior to Full Rate Production<br />
+<div class="outline-text-5" id="text-orgeee8e47">
+<p>
+– For ACAT I programs
+– Addresses OT
+– Is system effective &amp; suitable for combat?
+</p>
+</div>
+</li>
+<li><a id="org615c3de"></a>Independent OSD Live Fire Test Report required prior to FRP for covered systems<br />
+<div class="outline-text-5" id="text-org615c3de">
+<p>
+– For applicable ACAT I &amp; II programs
+– Addresses survivability &amp; lethality
+</p>
+</div>
+</li>
+<li><a id="orgcbcc832"></a>DT&amp;E<br />
+<div class="outline-text-5" id="text-orgcbcc832">
+<ul class="org-ul">
+<li>conducted throughout the acq process</li>
+<li>controlled by PMO</li>
+</ul>
+</div>
+</li>
+<li><a id="org8b176db"></a>OT&amp;E<br />
+<div class="outline-text-5" id="text-org8b176db">
+<ul class="org-ul">
+<li>effectiveness and suitability</li>
+<li>controlled by OTA</li>
+</ul>
+</div>
+</li>
+<li><a id="orgef9d585"></a>LFT&amp;E<br />
+<div class="outline-text-5" id="text-orgef9d585">
+<ul class="org-ul">
+<li>lethality and vulnerability</li>
+</ul>
+</div>
+</li>
+<li><a id="org2cf20ad"></a>DOD level:  OT&amp;E separate from DT&amp;E, different organizations<br />
+<div class="outline-text-5" id="text-org2cf20ad">
+<ul class="org-ul">
+<li>DOT&amp;E from Title 10, annual report to congress</li>
+<li>DASD DT&amp;E from Title 10, too</li>
+</ul>
+</div>
+</li>
+<li><a id="orgd65548e"></a>Navy level: COMOPTEV4, COTF, is Navy's OTA<br />
+<div class="outline-text-5" id="text-orgd65548e">
+<ul class="org-ul">
+<li>derives testable parameters from CDD</li>
+</ul>
+</div>
+</li>
+<li><a id="org5ff5c26"></a>Test and Eval Master Plan (TEMP) provides overall test management plan and framework<br />
+<div class="outline-text-5" id="text-org5ff5c26">
+<ul class="org-ul">
+<li>entire life cycle</li>
+</ul>
+</div>
+</li>
+<li><a id="org590f0c9"></a>TEMP Planning Considerations<br />
+<div class="outline-text-5" id="text-org590f0c9">
+<ul class="org-ul">
+<li>Consistent with Acq Strat</li>
+<li>Maximize existing test facilities</li>
+<li>System maturity</li>
+</ul>
+</div>
+</li>
+<li><a id="orge3c57e1"></a>Model ‐ static representation of system or process<br /></li>
+<li><a id="orgeaa408f"></a>Simulation ‐ dynamic application of model(s) through time<br /></li>
+<li><a id="orga610e8c"></a>Verification – the model accurately represents the developer's conceptual description<br /></li>
+<li><a id="orgcd2cb22"></a>Validation – process of determining the degree to which a model is an accurate representation of the real world<br /></li>
+<li><a id="org5d43081"></a>Accreditation – the official certification of M&amp;S for a specific purpose<br /></li>
+</ul>
+</div>
+<div id="outline-container-orga935c5d" class="outline-4">
+<h4 id="orga935c5d">SUMMARY</h4>
+<div class="outline-text-4" id="text-orga935c5d">
+</div>
+<ul class="org-ul">
+<li><a id="orga48a707"></a>T&amp;E is exercising a system or components and analyzing results to provide:<br />
+<div class="outline-text-5" id="text-orga48a707">
+<p>
+-performance‐related information
+</p>
+</div>
+</li>
+<li><a id="orgd40452f"></a>T&amp;E supports MDA risk management by providing:<br />
+<div class="outline-text-5" id="text-orgd40452f">
+<ul class="org-ul">
+<li>critical data for decision making</li>
+</ul>
+</div>
+</li>
+<li><a id="orga5e77ce"></a>T&amp;E is the primary method to verify design meets requirements and validate solution<br />
+<div class="outline-text-5" id="text-orga5e77ce">
+<ul class="org-ul">
+<li>meets user’s needs</li>
+</ul>
+</div>
+</li>
+<li><a id="org19293c9"></a>Three types of T&amp;E and responsible organizations are:<br />
+<div class="outline-text-5" id="text-org19293c9">
+<p>
+– OT&amp;E &amp; LFT&amp;E – OPTEVFOR
+– DT&amp;E – Government Program Office
+– Interoperability – JITC
+</p>
+</div>
+</li>
+<li><a id="org3bb5d44"></a>The key T&amp;E support organizations within the Navy are<br />
+<div class="outline-text-5" id="text-org3bb5d44">
+<ul class="org-ul">
+<li>DOT&amp;E, JITC, OPNAV N94, DASN (RDT&amp;E), SYSCOMs, OPTEVFOR</li>
+</ul>
+</div>
+</li>
+<li><a id="orgf240ee6"></a>Key OT&amp;E activities coordinated with DOT&amp;E are<br />
+<div class="outline-text-5" id="text-orgf240ee6">
+<ul class="org-ul">
+<li>approving test plans, overseeing Operation Test Agencies (OTAs), reports delivered for FRP decisions</li>
+</ul>
+</div>
+</li>
+<li><a id="orgc739d1a"></a>Independent agencies conduct OT&amp;E to provide:<br />
+<div class="outline-text-5" id="text-orgc739d1a">
+<ul class="org-ul">
+<li>unbiased test of effectiveness and suitability in operational environment</li>
+</ul>
+</div>
+</li>
+<li><a id="org5131697"></a>The Role of M&amp;S is to:<br />
+<div class="outline-text-5" id="text-org5131697">
+<ul class="org-ul">
+<li>support systems design (many variants may need to be tested), trade studies means to explore theoretical performance or basis allows many more design/cases to be examined, examine margins of error, safer‐less system/operator risk financial analysis, sustainment, and performance assessments</li>
+</ul>
+</div>
+</li>
+<li><a id="org8ff5edf"></a>M&amp;S is used throughout to support acquisition decisions<br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7a3f90c" class="outline-3">
+<h3 id="org7a3f90c">3.6.1 (TLO 3,5b,8,13)</h3>
+<div class="outline-text-3" id="text-org7a3f90c">
+</div>
+<div id="outline-container-orgdfdfe1a" class="outline-4">
+<h4 id="orgdfdfe1a">TLOs</h4>
+<div class="outline-text-4" id="text-orgdfdfe1a">
+</div>
+<ul class="org-ul">
+<li><a id="org98aab67"></a>1. Recognize the concept of Earned Value Management (EVM).<br /></li>
+<li><a id="org0b7021e"></a>2. Recognize how EVM fits into the defense acquisition process.<br />
+<ul class="org-ul">
+<li><a id="orgec26d13"></a>a. Recognize under which conditions EVM is required based on governing EVM statutes, regulatory policy, and DoD implementation guidance.<br /></li>
+<li><a id="org0379420"></a>b. Recognize the value and benefits of EVM in the defense acquisition process.<br /></li>
+</ul>
+</li>
+<li><a id="org00a02db"></a>3. Recognize the importance of Earned Value as a management tool.<br /></li>
+<li><a id="orgd1b7ef8"></a>4. Recognize the management processes associated with EVM.<br /></li>
+<li><a id="org10de781"></a>5. Recognize the key processes in the development and management of a Performance Measurement Baseline (PMB).<br />
+<ul class="org-ul">
+<li><a id="org73307d1"></a>a. Identify the relationship of the PMB to program objectives.<br /></li>
+<li><a id="org5215066"></a>b. Identify the sequence of steps in the development of the initial PMB.<br /></li>
+</ul>
+</li>
+<li><a id="org292f5a4"></a>6. Identify the three major reasons for PMB changes, their impact, and the approval authority for each.<br /></li>
+<li><a id="org057be5f"></a>7. Identify the benefits of reviewing the PMB at the Integrated Baseline Review (IBR) to evaluate its validity.<br /></li>
+<li><a id="org4f1dcc4"></a>8. Identify the DoD offices and agencies responsible for EVM.<br /></li>
+<li><a id="org3da27b5"></a>9. Recognize required EVM implementation activities.<br /></li>
+<li><a id="orge6e1ebf"></a>10. Recognize the purpose of EVM reviews (Integrated Baseline Review (IBR), Initial Compliance Evaluation, and Post Acceptance Review) and when they must be completed.<br /></li>
+<li><a id="org2bef63d"></a>11. Identify performance report tailoring considerations and their effect on reporting.<br /></li>
+<li><a id="orgf5ba574"></a>12. Identify and understand the purpose, formats, and content of the Integrated Program Management Data Analysis Report (IPMDAR).<br /></li>
+<li><a id="orgf442a2f"></a>13. Identify the primary factors that the government should review to evaluate the contractor’s PMB during an IBR.<br /></li>
+<li><a id="org87b5aff"></a>14. Recognize the importance of Earned Value data in external reporting.<br /></li>
+<li><a id="org7ae03cb"></a>15. Recall the importance of the Contractor Funds Status Report (CFSR) and the differences between the CFSR and the IPMDAR.<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgebc0140" class="outline-4">
+<h4 id="orgebc0140">LECTURE NOTES</h4>
+<div class="outline-text-4" id="text-orgebc0140">
+</div>
+<ul class="org-ul">
+<li><a id="org598b7cb"></a>Purpose of EVM<br />
+<div class="outline-text-5" id="text-org598b7cb">
+<ul class="org-ul">
+<li>It is a management tool that helps monitor, control, and report the contract and/or project performance</li>
+<li>Many benefits, including better overall planning and control discipline for proactive decision making and risk management decisions.</li>
+</ul>
+</div>
+</li>
+<li><a id="org9b24933"></a>Earned Value equations always start with EV<br /></li>
+<li><a id="org8984b90"></a>Definitions<br />
+<div class="outline-text-5" id="text-org8984b90">
+<ul class="org-ul">
+<li>PV = BCWS (BUDGETED COST OF WORK SCHEDULED)</li>
+<li>EV = BCWP (BCW PERFORMED)</li>
+<li>AC = ACWP (ACTUAL CWP)</li>
+</ul>
+</div>
+</li>
+<li><a id="org7510ba0"></a>EVM must be used for:<br />
+<div class="outline-text-5" id="text-org7510ba0">
+<ul class="org-ul">
+<li>contracts &gt; $20M</li>
+<li>must be formally validated by DCMA for &gt; $100M</li>
+</ul>
+</div>
+</li>
+<li><a id="orgc4a45be"></a>EVM discouraged for FFP contracts<br /></li>
+<li><a id="orgef18c0d"></a>EVM principal players<br />
+<div class="outline-text-5" id="text-orgef18c0d">
+<ul class="org-ul">
+<li>DCMA ensures EVMS surveillance and compliance with DoD directives and contractual requirements; DCAA assists with audits</li>
+<li>At SUPSHIP, DCMA/DCAA roles are filled by the command</li>
+</ul>
+</div>
+</li>
+<li><a id="org9fc1bc5"></a>Performance Measurement Baseline (PMB)<br />
+<div class="outline-text-5" id="text-org9fc1bc5">
+<ul class="org-ul">
+<li>the S-curve graph of money vs time</li>
+<li>time-phased plan for accomplishing authorized work</li>
+</ul>
+</div>
+</li>
+<li><a id="org5c60a27"></a>PMB Development Steps<br />
+<ul class="org-ul">
+<li><a id="org7fa0197"></a>Before the contract award<br />
+<div class="outline-text-6" id="text-org7fa0197">
+<ul class="org-ul">
+<li>develop prelim schedule</li>
+<li>estimate resources required to do the work</li>
+<li>may build in cushion for risk</li>
+</ul>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="orgedd276a"></a>Management Reserve<br />
+<div class="outline-text-5" id="text-orgedd276a">
+<ul class="org-ul">
+<li>funds set aside for unknown but in-scope tasks</li>
+<li>should be tied to risk areas</li>
+</ul>
+</div>
+</li>
+<li><a id="orgf8a9745"></a>Integrated Baseline Review (IBR)<br />
+<div class="outline-text-5" id="text-orgf8a9745">
+<ul class="org-ul">
+<li>Joint assessment conducted by the Government PM and Contractor to verify realism and accuracy of the PMB;</li>
+<li>ensuring it captures the entire technical scope, schedule requirements, and is adequately resourced</li>
+<li>done with 6 months of contract award</li>
+<li>management reserve assessed with respect to program risk</li>
+</ul>
+</div>
+</li>
+<li><a id="org185492a"></a>Integrated Program Management Data Analysis Report (IPMDAR)<br />
+<div class="outline-text-5" id="text-org185492a">
+<ul class="org-ul">
+<li>6 formats (specifics don't matter now, but could be Work Breakdown Structure (WBS))</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-orgc47df75" class="outline-4">
+<h4 id="orgc47df75">SUMMARY</h4>
+<div class="outline-text-4" id="text-orgc47df75">
+</div>
+<ul class="org-ul">
+<li><a id="orgc4a72cc"></a>What is the PMB?<br />
+<div class="outline-text-5" id="text-orgc4a72cc">
+<p>
+– A time‐phased plan that represents all work on the contract
+</p>
+</div>
+</li>
+<li><a id="org04454ec"></a>What are the steps in developing the PMB?<br />
+<div class="outline-text-5" id="text-org04454ec">
+<p>
+– 1. Define scope of work to the control account level
+– 2. Schedule the work in logical sequence
+– 3. Budget for the work
+– 3a. Time‐phase the budget
+</p>
+</div>
+</li>
+<li><a id="org1ea068b"></a>What are the three reasons for PMB changes that we discussed?<br />
+<div class="outline-text-5" id="text-org1ea068b">
+<p>
+– Formal contract changes
+– Internal re‐planning
+– Formal reprogramming (OTB)
+</p>
+</div>
+</li>
+<li><a id="org671f810"></a>When is EVM required in DoD?<br />
+<div class="outline-text-5" id="text-org671f810">
+<p>
+– Cost or Incentive contracts &amp; subcontracts greater than 20 million in then‐year dollars (Implement ANSI/EIA‐748)
+– Cost or Incentive contracts &amp; subcontracts greater than 100 million in then‐year dollars (Implement ANSI/EIA‐748 &amp; a formally validated EVM System)
+– Contracts below these thresholds – EVM is optional
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org81afcda" class="outline-3">
+<h3 id="org81afcda">3.6.2 (TLO 1,2,4,6)</h3>
+<div class="outline-text-3" id="text-org81afcda">
+</div>
+<div id="outline-container-orgbcb2376" class="outline-4">
+<h4 id="orgbcb2376">TLOs</h4>
+<div class="outline-text-4" id="text-orgbcb2376">
+</div>
+<ul class="org-ul">
+<li><a id="org5ccb872"></a>1. Define the 5 Earned Value Management (EVM) independent variables (BCWS, BCWP, ACWP, BAC, EAC) and use them to compute appropriate performance status indicators.<br /></li>
+<li><a id="org0ae8e89"></a>2. Identify the limitations in analyzing cost and schedule variance.<br /></li>
+<li><a id="orgbdecdf3"></a>3. Identify the four EVM data analysis steps.<br /></li>
+<li><a id="orgea22fb9"></a>4. Recognize five EVM signs of significant problem areas or risk.<br /></li>
+<li><a id="org619fdaf"></a>5. Match the type of work with the most appropriate performance measurement technique.<br /></li>
+<li><a id="org87c47db"></a>6. Given a Gantt chart and performance (e.g., cost, risk and schedule) data, detect and analyze the impact of significant problem areas, based on the status indicators.<br /></li>
+<li><a id="org4c02e8c"></a>7 Analyze and interpret Contractor performance indicators (cost variance, schedule variance, SPI &amp; CPI) to explain the program's cost and schedule status and identify trends and problem.<br /></li>
+<li><a id="orgc75ba45"></a>8. Given performance data, calculate an estimate of cost at completion.<br />
+<ul class="org-ul">
+<li><a id="org1c5f505"></a>a. Understand difference between Government and Contractor estimates at completion<br /></li>
+</ul>
+</li>
+<li><a id="orgc71261b"></a>9. Analyze the Contractor’s status by applying earned value analysis techniques (e.g., calculate cost variance, schedule variance, cost performance index and schedule performance index).<br /></li>
+<li><a id="org0eff245"></a>10. Given a segment of contract work and associated tasks, plan and schedule the tasks and resources necessary to complete contract work within cost and schedule constraints.<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgf3cc8a7" class="outline-4">
+<h4 id="orgf3cc8a7">LECTURE NOTES</h4>
+<div class="outline-text-4" id="text-orgf3cc8a7">
+</div>
+<ul class="org-ul">
+<li><a id="org701e007"></a>If EVM is required, know to look for a CDRL.<br /></li>
+<li><a id="orga7b808c"></a>Graph hints<br />
+<ul class="org-ul">
+<li><a id="org93042a0"></a>When BCWP is under BCWS on graph, behind schedule<br /></li>
+<li><a id="org71717ab"></a>When ACWP is over BCWP on graph, over budget<br /></li>
+</ul>
+</li>
+<li><a id="orgbbcd531"></a>Apply graph hints to equations to determine cost/performance (PDF page 1505/lecture slide 7)<br /></li>
+<li><a id="orgc78cfc3"></a>Schedule variance:<br />
+<ul class="org-ul">
+<li><a id="orga2eb015"></a>by itself gives no info about critical path<br /></li>
+<li><a id="org1dcda4e"></a>needs other schedule info for analysis<br /></li>
+<li><a id="orgbcacf45"></a>may be misleading (favorable offsets unfavorable)<br /></li>
+</ul>
+</li>
+<li><a id="orgdfb189d"></a>Cost variance:<br />
+<ul class="org-ul">
+<li><a id="org9f90679"></a>further analysis necessary to determine causes of cost variance and overall effect on contract cost<br /></li>
+<li><a id="org08c5651"></a>trend indicator<br /></li>
+<li><a id="org526c0d0"></a>used in top level reporting to assess if budget is reasonable<br /></li>
+<li><a id="org7b6f482"></a>may be misleading when comparing $$ to man-hours<br /></li>
+</ul>
+</li>
+<li><a id="org70143d0"></a>SPI and CPI are fractions, CV and PV are pos/neg numbers.<br /></li>
+<li><a id="org110038b"></a>Variance at Completion (VAC)<br />
+<ul class="org-ul">
+<li><a id="org3c0cc95"></a>VAC = BAC - EAC (Budget at Completion - Estimate at Completion)<br /></li>
+</ul>
+</li>
+<li><a id="orgfdae706"></a>Common indicators of problem areas or risks<br />
+<ul class="org-ul">
+<li><a id="org5cd74b4"></a>Application of management reserves<br /></li>
+<li><a id="org6c5e73b"></a>Significant revisions of PMB<br /></li>
+<li><a id="org56be2a2"></a>Zero variance<br /></li>
+<li><a id="orga474e0a"></a><b>Sudden change in monthly performance trends</b><br /></li>
+<li><a id="org4ccbdba"></a>Linear downward cost variance<br /></li>
+<li><a id="orgd0727ee"></a>Unreasonable TCPI (To Complete Performance Index)<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org8fd203f" class="outline-4">
+<h4 id="org8fd203f">SUMMARY</h4>
+<div class="outline-text-4" id="text-org8fd203f">
+</div>
+<ul class="org-ul">
+<li><a id="orga1248d8"></a>What are the 4 Data Analysis Steps?<br />
+<div class="outline-text-5" id="text-orga1248d8">
+<p>
+– Get current performance status
+– Identify performance trends
+– Predict performance completion
+– Determine management actions
+</p>
+</div>
+</li>
+<li><a id="orgddc9fb0"></a>What are the 4 Discrete Effort Performance Measurement Techniques and when are they used?<br />
+<div class="outline-text-5" id="text-orgddc9fb0">
+<p>
+– Percent Complete Method (long duration tasks with no milestones)
+– Weighted Milestones (long duration tasks with identifiable milestones)
+– Percent Start/ Percent Complete (short duration tasks &lt; 2 reporting periods)
+– 0/100 Method
+</p>
+</div>
+</li>
+<li><a id="org8297bb9"></a>(True/False) A major limitation of cost variance is that it does not take critical path into account<br />
+<div class="outline-text-5" id="text-org8297bb9">
+<p>
+– FALSE – that is a limitation of schedule variance
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org93f52e0" class="outline-3">
+<h3 id="org93f52e0">4.2.1 (TLO 2,7,8,9)</h3>
+<div class="outline-text-3" id="text-org93f52e0">
+</div>
+<div id="outline-container-orgc8dd289" class="outline-4">
+<h4 id="orgc8dd289">TLOs</h4>
+<div class="outline-text-4" id="text-orgc8dd289">
+</div>
+<ul class="org-ul">
+<li><a id="org8e4cc8c"></a>1. Recognize the need for balance between flexible requirements and stable requirements / early planning.<br /></li>
+<li><a id="org54982d1"></a>2. Identify the five sources of jobs contained in Availability Work Packages (AWP).<br /></li>
+<li><a id="org6c9ca17"></a>3. Identify the process for AWP development.<br /></li>
+<li><a id="orgd1f7f24"></a>4. Identify the names, abbreviations and purposes of typical CNO availability planning products.<br /></li>
+<li><a id="org39a691c"></a>5. Identify the duties of the key Project Team members during availability planning.<br /></li>
+<li><a id="org95b3154"></a>6. Identify the similarities and differences in the work definition and planning processes across different ship platforms in accordance with Surface Team One, Carrier Team One and Sub Team One.<br /></li>
+<li><a id="org2e6e034"></a>7. Identify the benefits of Multiple Award Contract Multiple Order (MACMO) contracts when planning ship maintenance.<br /></li>
+<li><a id="org0c6f344"></a>8. Identify the roles and responsibilities of availability planning activities/organizations.<br /></li>
+<li><a id="org8fe84ee"></a>9. Recognize the planning goals to be met prior to availability start.<br /></li>
+<li><a id="org1b8603d"></a>10. Given a simple Gantt chart with defined task relationships, identify the critical path.<br /></li>
+</ul>
+</div>
+<div id="outline-container-org30ae92b" class="outline-4">
+<h4 id="org30ae92b">LECTURE NOTES</h4>
+<div class="outline-text-4" id="text-org30ae92b">
+</div>
+<ul class="org-ul">
+<li><a id="org2a24de4"></a>Total Ship Readiness Assessments<br />
+<div class="outline-text-5" id="text-org2a24de4">
+<ul class="org-ul">
+<li>last chance to add work to work package</li>
+</ul>
+</div>
+</li>
+<li><a id="org09372e4"></a>Integrated Schedule<br />
+<div class="outline-text-5" id="text-org09372e4">
+<ul class="org-ul">
+<li>most important part of the availability</li>
+</ul>
+</div>
+</li>
+<li><a id="org0829e36"></a>RMC contracting strategy &#x2013; FIRM FIXED PRICE<br /></li>
+</ul>
+</div>
+<div id="outline-container-org5be4289" class="outline-4">
+<h4 id="org5be4289">SUMMARY</h4>
+<div class="outline-text-4" id="text-org5be4289">
+</div>
+<ul class="org-ul">
+<li><a id="org63fb695"></a>What are the five sources of AWP work candidates?<br />
+<div class="outline-text-5" id="text-org63fb695">
+<p>
+– Class Maintenance Plan (CMP) or Integrated CMP (ICMP)
+– Authorized alterations (Program and Fleet)
+– TYCOM repairs
+– Results of pre‐availability test and inspections
+– Current Ship Maintenance Project (CSMP)
+</p>
+</div>
+</li>
+<li><a id="org2718ee5"></a>Who produces the Baseline AWP for submarines, carriers, and surface ships?<br />
+<div class="outline-text-5" id="text-org2718ee5">
+<p>
+– Submarines: SUBMEPP
+– Carriers: PMS 312 (Carrier Planning Activity)
+– Surface: SURFMEPP
+</p>
+</div>
+</li>
+<li><a id="orgc52ec9f"></a>What is the most important product of the planning process?<br />
+<div class="outline-text-5" id="text-orgc52ec9f">
+<p>
+– Integrated Schedule
+</p>
+</div>
+</li>
+<li><a id="org115296a"></a>What is a component unit (CU)?<br />
+<div class="outline-text-5" id="text-org115296a">
+<p>
+– A physical piece of equipment or hardware that is the unit of work control
+</p>
+</div>
+</li>
+<li><a id="org78469d9"></a>Who is the major Public Shipyard management team member during availability planning?<br />
+<div class="outline-text-5" id="text-org78469d9">
+<p>
+– Project Engineering and Planning Manager (PEPM)
+</p>
+</div>
+</li>
+<li><a id="org1d61074"></a>What are the planning goals to be met prior to starting an availability?<br />
+<div class="outline-text-5" id="text-org1d61074">
+<p>
+– Ordering long lead‐time material
+– Special tooling on‐site
+– Early start requirements
+– Critical path/key events known and included in the integrated schedule
+– Logistics concerns addressed
+– Training for crew on shipyard procedures
+– On‐time contract award or definitization (RMC)
+</p>
+</div>
+</li>
+<li><a id="orga431c9e"></a>Why did surface ship maintenance contracting revert to FFP under the MACMO construct?<br />
+<div class="outline-text-5" id="text-orga431c9e">
+<p>
+– To drive total cost down and increase competition in the private sector
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge87e407" class="outline-3">
+<h3 id="orge87e407">4.2.2 (TLO 1,3,4,5)</h3>
+<div class="outline-text-3" id="text-orge87e407">
+</div>
+<div id="outline-container-orgb03bef6" class="outline-4">
+<h4 id="orgb03bef6">TLOs</h4>
+<div class="outline-text-4" id="text-orgb03bef6">
+</div>
+<ul class="org-ul">
+<li><a id="org2e01d3d"></a>1. Identify the members and responsibilities of a public shipyard project team and Regional Maintenance Center maintenance team.<br /></li>
+<li><a id="org3fd106f"></a>2. Identify typical execution phases of a repair availability and what goes on within each phase.<br /></li>
+<li><a id="org22dda42"></a>3. Identify the terms associated with scheduling a maintenance availability.<br /></li>
+<li><a id="orgd0a279b"></a>4. Recognize the roles and responsibilities of the Naval Supervising Activity (NSA) and Lead Maintenance Activity (LMA).<br /></li>
+<li><a id="orgc10722d"></a>5. Identify organizations that can fulfill the roles of NSA and LMA.<br /></li>
+</ul>
+</div>
+<div id="outline-container-orge88b26b" class="outline-4">
+<h4 id="orge88b26b">LECTURE NOTES</h4>
+<div class="outline-text-4" id="text-orge88b26b">
+</div>
+<ul class="org-ul">
+<li><a id="org21464c0"></a>Waterfront CHENG (from NSA) certifies availability completion reports.<br /></li>
+<li><a id="orge3f6096"></a>New work<br />
+<div class="outline-text-5" id="text-orge3f6096">
+<ul class="org-ul">
+<li>Any additional work that is identified or authorized after contract award that is not related to a work item included in the original contract</li>
+</ul>
+</div>
+</li>
+<li><a id="orga28fca1"></a>Growth work<br />
+<div class="outline-text-5" id="text-orga28fca1">
+<ul class="org-ul">
+<li>Additional work that is identified or authorized after contract award that is related to a work item included in the original contract</li>
+<li>Some growth work is expected as certain tasks are difficult to fully scope within the</li>
+</ul>
+<p>
+original contract, e.g., inspection and repair of tanks
+</p>
+</div>
+</li>
+<li><a id="orgdab2b1c"></a>Anticipated repair work<br />
+<div class="outline-text-5" id="text-orgdab2b1c">
+<ul class="org-ul">
+<li>Work that is not fully quantifiable prior to the start of avail (e.g. requires work after inspection), however it is work that is expected and based on historical lessons learned, can be budgeted, resourced, and scheduled prior to the start of avail or inspection</li>
+</ul>
+</div>
+</li>
+<li><a id="org085fa8b"></a>Availability Work Certification<br />
+<div class="outline-text-5" id="text-org085fa8b">
+<ul class="org-ul">
+<li>Objective Quality Evidence (OQE) shows completion was technically correct</li>
+<li>Gives Navy Supervisory Activity (NSA) with maximum reasonable assurance that availability work is complete and technically correct.</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org20a624a" class="outline-4">
+<h4 id="org20a624a">SUMMARY</h4>
+<div class="outline-text-4" id="text-org20a624a">
+</div>
+<ul class="org-ul">
+<li><a id="org7ff1fb2"></a>Who directs the project planning and management, job planning, and job sequencing and scheduling processes for public shipyard availabilities?<br />
+<div class="outline-text-5" id="text-org7ff1fb2">
+<p>
+– Project Engineering &amp; Planning Manger (PEPM)
+</p>
+</div>
+</li>
+<li><a id="org58aef85"></a>Which public shipyard management team member is responsible for obtaining funding, identifying authorized work, and working directly with customer on issues of cost and schedule?<br />
+<div class="outline-text-5" id="text-org58aef85">
+<p>
+– Business &amp; Strategic Planning Office (BSPO)
+</p>
+</div>
+</li>
+<li><a id="org35c7ab6"></a>Who is the RMC management team member that serves as the maintenance team<br />
+<div class="outline-text-5" id="text-org35c7ab6">
+<p>
+leader?
+– Port Engineer
+</p>
+</div>
+</li>
+<li><a id="org67a00e3"></a>What are the typical execution phases of an availability?<br />
+<div class="outline-text-5" id="text-org67a00e3">
+<p>
+– Arrival, rip‐out &amp; repair, open &amp; inspect, progress assessment, testing, trials &amp; certification
+</p>
+</div>
+</li>
+<li><a id="orgb0c3467"></a>Who is responsible for certifying work accomplished during an availability?<br />
+<div class="outline-text-5" id="text-orgb0c3467">
+<p>
+– Naval Supervising Activity (NSA)
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0f7b389" class="outline-3">
+<h3 id="org0f7b389">5.1.4 (TLO 1,2)</h3>
+<div class="outline-text-3" id="text-org0f7b389">
+</div>
+<div id="outline-container-org76d8340" class="outline-4">
+<h4 id="org76d8340">TLOs</h4>
+<div class="outline-text-4" id="text-org76d8340">
+</div>
+<ul class="org-ul">
+<li><a id="orgad0f788"></a>1. Recognize techniques to prepare and deliver an effective presentation.<br /></li>
+<li><a id="org49c4927"></a>2. Recognize the parts of a presentation and recall the objective of each part.<br /></li>
+<li><a id="org6abe97e"></a>3. Understand how to employ visual, verbal and vocal components to ensure a successful presentation.<br /></li>
+</ul>
+</div>
+<div id="outline-container-org801f2d8" class="outline-4">
+<h4 id="org801f2d8">LECTURE NOTES</h4>
+<div class="outline-text-4" id="text-org801f2d8">
+</div>
+<ul class="org-ul">
+<li><a id="orgb738703"></a>3 parts of a brief<br />
+<div class="outline-text-5" id="text-orgb738703">
+<ul class="org-ul">
+<li>Opening</li>
+<li>Body</li>
+<li>Closing</li>
+</ul>
+</div>
+</li>
+<li><a id="orge7fb780"></a>3 components of a presentation<br />
+<div class="outline-text-5" id="text-orge7fb780">
+<ul class="org-ul">
+<li>verbal</li>
+<li>vocal</li>
+<li>visual</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org0484bdd" class="outline-4">
+<h4 id="org0484bdd">SUMMARY</h4>
+<div class="outline-text-4" id="text-org0484bdd">
+</div>
+<ul class="org-ul">
+<li><a id="org054329c"></a>The first three steps of an effective presentation are…?<br />
+<div class="outline-text-5" id="text-org054329c">
+<p>
+– Analyze audience, understand the deliverable, determine purpose
+</p>
+</div>
+</li>
+<li><a id="orgaadb7a0"></a>What is the importance of the Purpose?<br />
+<div class="outline-text-5" id="text-orgaadb7a0">
+<p>
+– Informs the audience of the speaker’s reason for giving the presentation
+</p>
+</div>
+</li>
+<li><a id="orgf73f72c"></a>What is the purpose of the Opening?<br />
+<div class="outline-text-5" id="text-orgf73f72c">
+<p>
+– Gain the audience’s attention, and prepare them to receive the message
+</p>
+</div>
+</li>
+<li><a id="org6144f71"></a>What is the purpose of the Closing?<br />
+<div class="outline-text-5" id="text-org6144f71">
+<p>
+– Drive home the take‐aways
+</p>
+</div>
+</li>
+<li><a id="orgff48b1f"></a>What element of the first part of a presentation tells the audience what they gain from the brief?<br />
+<div class="outline-text-5" id="text-orgff48b1f">
+<p>
+– Expectations (which are tied to take‐aways in the closing)
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
